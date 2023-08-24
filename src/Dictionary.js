@@ -10,10 +10,21 @@ export default function Dictionary(props) {
   const [loaded, setLoaded] = useState(false);
   const [photos, setPhotos] = useState(null);
 
-  useEffect(() => {
-    // Load data when the component mounts
-    loadData();
-  }, [loadData]); // Include loadData as a dependency
+const loadData = useCallback(
+  () => {
+    setLoaded(true);
+    search();
+  },
+  [
+    /* dependencies */
+  ]
+);
+
+useEffect(() => {
+  // Load data when the component mounts
+  loadData();
+}, [loadData]);
+
 
   function loadData() {
     setLoaded(true);
