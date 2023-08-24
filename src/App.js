@@ -45,7 +45,6 @@ export default function App() {
   }, []);
 
   return (
-  
     <div className="App">
       <div className="container">
         <header className="App-header">
@@ -67,7 +66,7 @@ export default function App() {
             </a>{" "}
             and is open-sourced on{" "}
             <a
-              href="https://github.com/SadiaMahmoodMalik"
+              href="https://github.com/SadiaMahmoodMalik/Spooky-Dictionary/tree/master"
               target="_blank"
               rel="noreferrer"
               className="github-link"
