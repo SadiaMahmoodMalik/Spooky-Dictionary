@@ -13,7 +13,7 @@ export default function Dictionary(props) {
   useEffect(() => {
     // Load data when the component mounts
     loadData();
-  }, []);
+  }, [loadData]); // Include loadData as a dependency
 
   function loadData() {
     setLoaded(true);
