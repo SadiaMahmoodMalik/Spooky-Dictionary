@@ -10,26 +10,21 @@ export default function Dictionary(props) {
   const [loaded, setLoaded] = useState(false);
   const [photos, setPhotos] = useState(null);
 
-const loadData = useCallback(
-  () => {
-    setLoaded(true);
-    search();
-  },
-  [
-    /* dependencies */
-  ]
-);
+  useEffect(
+    () => {
+      // Define the loadData function inside the useEffect
+      function loadData() {
+        setLoaded(true);
+        search();
+      }
 
-useEffect(() => {
-  // Load data when the component mounts
-  loadData();
-}, [loadData]);
-
-
-  function loadData() {
-    setLoaded(true);
-    search();
-  }
+      // Load data when the component mounts
+      loadData();
+    },
+    [
+      /* dependencies */
+    ]
+  );
 
   function search() {
     const apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
